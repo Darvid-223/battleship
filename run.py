@@ -8,3 +8,17 @@ import os
 import ascii_art
 
 
+print(ascii_art.BATTLESHIP_ART)
+
+
+
+class Board:
+    """
+    Main class that takes size as argument
+    """
+    def __init__(self, size):
+        self.size = size
+
+    
+def scoreboard():
+    pass
