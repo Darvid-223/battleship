@@ -7,10 +7,8 @@ from random import randint
 import os
 import ascii_art
 
-
-print(ascii_art.BATTLESHIP_ART)
-
-
+def welcome_screen():
+    print(ascii_art.BATTLESHIP)
 
 class Board:
     """
@@ -22,3 +20,17 @@ class Board:
     
 def scoreboard():
     pass
+
+
+def main():
+    """
+    Main function to run the Battleship game.
+    """
+    welcome_screen()
+    
+
+main()
+
+
+
+
