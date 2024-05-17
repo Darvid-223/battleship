@@ -43,7 +43,7 @@ def clear_screen():
 
 class Board:
     """
-    Main class that takes size as argument
+    Main class that takes size as argument and initializes the game board.
     """
     def __init__(self, size):
         size_mapping = {"small": 5, "medium": 7, "large": 10}
@@ -64,7 +64,29 @@ class Board:
             else:
                 print(' '.join(['~' if cell == 'S' else cell for cell in row]))
 
+
+class Ship:
+    """
+    Class to represent ships on the board.
+    """
+    def __init__(self, length):
+        self.length = length
+        self.hits = 0
+        self.position = []
+
+    def hit(self):
+        """
+        Register hit.
+        """
+        self.hits += 1
     
+    def is_sunk(self):
+        """
+        Check if the ship is sunk.
+        """
+        return self.hits >= self.length
+
+
 def scoreboard():
     pass
 
