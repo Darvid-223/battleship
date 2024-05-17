@@ -36,6 +36,9 @@ def settings():
 
 
 def clear_screen():
+    """
+    Function to clear terminal.
+    """
     os.system("cls")
 
 class Board:
@@ -43,7 +46,23 @@ class Board:
     Main class that takes size as argument
     """
     def __init__(self, size):
-        self.size = size
+        size_mapping = {"small": 5, "medium": 7, "large": 10}
+        self.size = size_mapping[size]
+        self.grid = [['~'] * self.size for _ in range(self.size)]
+        self.ships = []
+
+    def display(self, reveal_ships=False):
+        """
+        Display the board.
+        
+        Parameters:
+        - reveal_ships: bool, if True, show ships positions
+        """
+        for row in self.grid:
+            if reveal_ships:
+                print(' '.join(row))
+            else:
+                print(' '.join(['~' if cell == 'S' else cell for cell in row]))
 
     
 def scoreboard():
@@ -56,8 +75,9 @@ def main():
     This function initializes the game.
     """
     welcome_screen()
-    settings()
-
+    board_size_choice = settings()
+    board = Board(board_size_choice)
+    board.display(reveal_ships=True)
 
 main()
 
