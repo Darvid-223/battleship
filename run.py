@@ -49,14 +49,26 @@ class Board:
         self.grid = [['~'] * size for _ in range(size)]
         self.ships = []
 
-    def display(self, show_ships=True):
+    def display(self, show_ships=False):
         # Print column numbers
         print("  " + " ".join([str(i) for i in range(1, self.size + 1)]))
         for idx, row in enumerate(self.grid):
-            # Print row numbers and grid row
-            print(str(idx + 1) + " " + " ".join(row))
+            if show_ships:
+                # Print row numbers and grid row as is
+                print(str(idx + 1) + " " + " ".join(row))
+            else:
+                # Replace 'S' with '~' if ships should not be shown
+                print(str(idx + 1) + " " + " ".join([cell if cell != 'S' else '~' for cell in row]))
         print()
 
+    def place_ships(self, num_ships):
+        placed_ships = 0
+        while placed_ships < num_ships:
+            row = randint(0, self.size - 1)
+            col = randint(0, self.size - 1)
+            if self.grid[row][col] == '~':
+                self.grid[row][col] = 'S'
+                placed_ships += 1
 
 
 def main():
@@ -69,10 +81,15 @@ def main():
     player_board = Board(board_size)
     computer_board = Board(board_size)
 
+    num_ships = 5  # Define the number of ships to be placed on the board
+
+    player_board.place_ships(num_ships)
+    computer_board.place_ships(num_ships)
+
     print("Player's Board:")
-    player_board.display()
+    player_board.display(show_ships=True)
 
     print("Computer's Board:")
-    computer_board.display()
+    computer_board.display(show_ships=False)
 
 main()
