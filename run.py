@@ -49,9 +49,12 @@ class Board:
         self.grid = [['~'] * size for _ in range(size)]
         self.ships = []
 
-    def display(self):
-        for row in self.grid:
-            print(' '.join(row))
+    def display(self, show_ships=True):
+        # Print column numbers
+        print("  " + " ".join([str(i) for i in range(1, self.size + 1)]))
+        for idx, row in enumerate(self.grid):
+            # Print row numbers and grid row
+            print(str(idx + 1) + " " + " ".join(row))
         print()
 
 
@@ -59,11 +62,17 @@ class Board:
 def main():
     clear_screen()
     welcome_screen()
-    get_player_input()
 
-    board_size = 5  
-    board = Board(board_size)
+    name, board_size = get_player_input()
+    print(f"\nWelcome, {name}!\n")
 
-    board.display()
+    player_board = Board(board_size)
+    computer_board = Board(board_size)
+
+    print("Player's Board:")
+    player_board.display()
+
+    print("Computer's Board:")
+    computer_board.display()
 
 main()
