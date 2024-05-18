@@ -70,6 +70,16 @@ class Board:
                 self.grid[row][col] = 'S'
                 placed_ships += 1
 
+    def all_ships_sunk(self):
+        """
+        Check if Game is Over.
+        """
+        for row in self.grid:
+            if 'S' in row:
+                return False
+        return True
+
+
 
 def main():
     clear_screen()
