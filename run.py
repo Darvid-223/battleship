@@ -15,94 +15,55 @@ def welcome_screen():
     print(ascii_art.BATTLESHIP)
     print("\nWelcome to Battleship!\n")
     
-def settings():
-    """
-    Prompts the user to choose the board size by entering a size name.
-    Continues to prompt until a valid input ('small', 'medium', or 'large') is entered.
-    """
-    valid_sizes = ["small", "medium", "large"]
-    
-    while True:
-        try:
-            size = input("Choose board size: small, medium, or large: ").strip().lower()
-            if size in valid_sizes:
-                return size
-            else:
-                raise ValueError("Invalid choice")
-        except ValueError as e:
-            print(e)
-            print("Please enter 'small', 'medium', or 'large'.")
-
-
-
 def clear_screen():
     """
     Function to clear terminal.
     """
     os.system("cls")
 
+def get_player_input():
+    """
+    Get player input for name and board size.
+    """
+    name = input("Enter your name: ")
+
+    while True:
+        size_choice = input("Choose board size (small, medium, large): ").lower()
+        if size_choice == "small":
+            board_size = 5
+            break
+        elif size_choice == "medium":
+            board_size = 7
+            break
+        elif size_choice == "large":
+            board_size = 10
+            break
+        else:
+            print("Invalid choice, please choose again.")
+    
+    return name, board_size
+
 class Board:
-    """
-    Main class that takes size as argument and initializes the game board.
-    """
     def __init__(self, size):
-        size_mapping = {"small": 5, "medium": 7, "large": 10}
-        self.size = size_mapping[size]
-        self.grid = [['~'] * self.size for _ in range(self.size)]
+        self.size = size
+        self.grid = [['~'] * size for _ in range(size)]
         self.ships = []
 
-    def display(self, reveal_ships=False):
-        """
-        Display the board.
-        
-        Parameters:
-        - reveal_ships: bool, if True, show ships positions
-        """
+    def display(self):
         for row in self.grid:
-            if reveal_ships:
-                print(' '.join(row))
-            else:
-                print(' '.join(['~' if cell == 'S' else cell for cell in row]))
+            print(' '.join(row))
+        print()
 
-
-class Ship:
-    """
-    Class to represent ships on the board.
-    """
-    def __init__(self, length):
-        self.length = length
-        self.hits = 0
-        self.position = []
-
-    def hit(self):
-        """
-        Register hit.
-        """
-        self.hits += 1
-    
-    def is_sunk(self):
-        """
-        Check if the ship is sunk.
-        """
-        return self.hits >= self.length
-
-
-def scoreboard():
-    pass
 
 
 def main():
-    """
-    Main function to run the Battleship game.
-    This function initializes the game.
-    """
+    clear_screen()
     welcome_screen()
-    board_size_choice = settings()
-    board = Board(board_size_choice)
-    board.display(reveal_ships=True)
+    get_player_input()
+
+    board_size = 5  
+    board = Board(board_size)
+
+    board.display()
 
 main()
-
-
-
-
