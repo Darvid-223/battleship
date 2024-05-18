@@ -62,12 +62,14 @@ class Board:
         print()
 
     def place_ships(self, num_ships):
+        self.ships = []
         placed_ships = 0
         while placed_ships < num_ships:
             row = randint(0, self.size - 1)
             col = randint(0, self.size - 1)
             if self.grid[row][col] == '~':
                 self.grid[row][col] = 'S'
+                self.ships.append((row, col))
                 placed_ships += 1
 
     def all_ships_sunk(self):
@@ -101,5 +103,6 @@ def main():
 
     print("Computer's Board:")
     computer_board.display(show_ships=False)
+    
 
 main()
