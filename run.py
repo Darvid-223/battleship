@@ -72,6 +72,18 @@ class Board:
                 self.ships.append((row, col))
                 placed_ships += 1
 
+    def take_shot(self, row, col):
+        """
+        Take a shot at the specified position.
+        """
+        if self.grid[row][col] == 'S':
+            self.grid[row][col] = 'X'  # Hit
+            return True
+        elif self.grid[row][col] == '~':
+            self.grid[row][col] = 'O'  # Miss
+            return False
+        return None  # Invalid shot (already taken)
+
     def all_ships_sunk(self):
         """
         Check if Game is Over.
