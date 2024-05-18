@@ -93,7 +93,16 @@ class Board:
                 return False
         return True
 
-
+def computer_turn(board, board_size):
+    """
+    Handle the computer's turn with random integer.
+    """
+    while True:
+        shot_row = randint(0, board_size - 1)
+        shot_col = randint(0, board_size - 1)
+        if board.take_shot(shot_row, shot_col) is not None:
+            print(f"Computer shoots at ({shot_row + 1}, {shot_col + 1})")
+            break
 
 def main():
     clear_screen()
