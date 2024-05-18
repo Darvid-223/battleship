@@ -103,6 +103,8 @@ def main():
 
     print("Computer's Board:")
     computer_board.display(show_ships=False)
+    print(player_board.ships)
+    print(computer_board.ships)
     
 
 main()
