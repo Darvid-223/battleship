@@ -92,6 +92,29 @@ class Board:
             if 'S' in row:
                 return False
         return True
+    
+def player_turn(board, board_size):
+    """
+    Handle the player's turn.
+    """
+    while True:
+        try:
+            shot_row = int(input(f"Enter row to shoot (1-{board_size}): ")) - 1
+            shot_col = int(input(f"Enter column to shoot (1-{board_size}): ")) - 1
+            if 0 <= shot_row < board_size and 0 <= shot_col < board_size:
+                result = board.take_shot(shot_row, shot_col)
+                if result is not None:
+                    if result:
+                        print("Hit!")
+                    else:
+                        print("Miss!")
+                    break
+                else:
+                    print("Invalid shot. Try again.")
+            else:
+                print(f"Invalid input. Please enter numbers between 1 and {board_size}.")
+        except ValueError:
+            print("Invalid input. Enter numbers only.")
 
 def computer_turn(board, board_size):
     """
@@ -119,13 +142,27 @@ def main():
     player_board.place_ships(num_ships)
     computer_board.place_ships(num_ships)
 
-    print("Player's Board:")
-    player_board.display(show_ships=True)
+    while True:
+        print("Player's Board:")
+        player_board.display(show_ships=True)
+        print(f"Player's ship positions: {player_board.ships}")
 
-    print("Computer's Board:")
-    computer_board.display(show_ships=False)
-    print(player_board.ships)
-    print(computer_board.ships)
+        print("Computer's Board:")
+        computer_board.display(show_ships=False)
+        # For debugging, uncomment the next line
+        print(f"Computer's ship positions: {computer_board.ships}")
+
+        # Player's turn
+        player_turn(computer_board, board_size)
+        if computer_board.all_ships_sunk():
+            print("Congratulations, you won!")
+            break
+
+        # Computer's turn
+        computer_turn(player_board, board_size)
+        if player_board.all_ships_sunk():
+            print("Sorry, you lost. Computer won!")
+            break
     
 
 main()
