@@ -105,9 +105,13 @@ def player_turn(board, board_size):
                 result = board.take_shot(shot_row, shot_col)
                 if result is not None:
                     if result:
+                        clear_screen()
                         print("Hit!")
+                        
                     else:
+                        clear_screen()
                         print("Miss!")
+                        
                     break
                 else:
                     print("Invalid shot. Try again.")
@@ -124,6 +128,7 @@ def computer_turn(board, board_size):
         shot_row = randint(0, board_size - 1)
         shot_col = randint(0, board_size - 1)
         if board.take_shot(shot_row, shot_col) is not None:
+
             print(f"Computer shoots at ({shot_row + 1}, {shot_col + 1})")
             break
 
@@ -132,6 +137,7 @@ def main():
     welcome_screen()
 
     name, board_size = get_player_input()
+    clear_screen()
     print(f"\nWelcome, {name}!\n")
 
     player_board = Board(board_size)
@@ -145,14 +151,11 @@ def main():
     while True:
         print("Player's Board:")
         player_board.display(show_ships=True)
-        # (1 index)
-        print(f"Player's ship positions: {[(row + 1, col + 1) for row, col in player_board.ships]} (1 index)")
 
         print("Computer's Board:")
         computer_board.display(show_ships=False)
-        # For debugging, uncomment the next line (1 index)
+        # For debugging, show ship position (1 index)
         print(f"Computer's ship positions: {[(row + 1, col + 1) for row, col in computer_board.ships]} (1 index)")
-
 
         # Player's turn
         player_turn(computer_board, board_size)
