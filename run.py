@@ -25,10 +25,10 @@ def get_player_input():
     """
     Get player input for name and board size.
     """
-    name = input("Enter your name: ")
+    name = input("Enter your name:\n")
 
     while True:
-        size_choice = input("Choose board size (small, medium, large): ").lower()
+        size_choice = input("Choose board size (small, medium, large):\n").lower()
         if size_choice == "small":
             board_size = 5
             break
