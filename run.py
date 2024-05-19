@@ -145,12 +145,14 @@ def main():
     while True:
         print("Player's Board:")
         player_board.display(show_ships=True)
-        print(f"Player's ship positions: {player_board.ships}")
+        # (1 index)
+        print(f"Player's ship positions: {[(row + 1, col + 1) for row, col in player_board.ships]} (1 index)")
 
         print("Computer's Board:")
         computer_board.display(show_ships=False)
-        # For debugging, uncomment the next line
-        print(f"Computer's ship positions: {computer_board.ships}")
+        # For debugging, uncomment the next line (1 index)
+        print(f"Computer's ship positions: {[(row + 1, col + 1) for row, col in computer_board.ships]} (1 index)")
+
 
         # Player's turn
         player_turn(computer_board, board_size)
