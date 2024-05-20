@@ -31,7 +31,9 @@ def get_player_input():
     name = input("Enter your name:\n")
 
     while True:
-        size_choice = input("Choose board size (small, medium, large):\n").lower()
+        size_choice = input("Choose board size (small, medium, large):\n")\
+                      .lower()
+
         if size_choice == "small":
             board_size = 5
             break
@@ -75,7 +77,10 @@ class Board:
                 print(str(idx + 1) + " " + " ".join(row))
             else:
                 # Replace S with ~ if ships should not be shown
-                print(str(idx + 1) + " " + " ".join([cell if cell != 'S' else '~' for cell in row]))
+                print(str(idx + 1) + " " + " ".join(
+                    [cell if cell != 'S' else '~' for cell in row]
+                ))
+
         print()
 
     def place_ships(self, num_ships):
@@ -124,7 +129,8 @@ def player_turn(board, board_size):
     while True:
         try:
             shot_row = int(input(f"Enter row to shoot (1-{board_size}): ")) - 1
-            shot_col = int(input(f"Enter column to shoot (1-{board_size}): ")) - 1
+            shot_col = int(input(
+                f"Enter column to shoot (1-{board_size}): ")) - 1
             if 0 <= shot_row < board_size and 0 <= shot_col < board_size:
                 result = board.take_shot(shot_row, shot_col)
                 if result is not None:
@@ -138,7 +144,8 @@ def player_turn(board, board_size):
                 else:
                     print("Invalid shot. Try again.")
             else:
-                print(f"Invalid input. Please enter numbers between 1 and {board_size}.")
+                print(f"Invalid input. Please enter numbers between 1 and "
+                      f"{board_size}.")
         except ValueError:
             print("Invalid input. Enter numbers only.")
 
@@ -190,8 +197,9 @@ def game_loop(player_board, computer_board, board_size):
         print("Computer's Board:")
         computer_board.display(show_ships=False)
         # For debugging, show ship position (1 index)
-        print(f"Computer's ship positions: {[(row + 1, col + 1) for row, col in computer_board.ships]} (1 index)")
-
+        print(f"Computer's ship positions: "
+              f"{[(row + 1, col + 1) for row, col in computer_board.ships]} "
+              f"(1 index)")
         # Player's turn
         player_turn(computer_board, board_size)
         if computer_board.all_ships_sunk():
