@@ -216,6 +216,9 @@ def game_loop(player_board, computer_board, board_size):
 
 
 def main():
+    """
+    Main function to initialize and run the Battleship game.
+    """
     name, board_size = setup_game()
     num_ships = 5  # Define the number of ships to be placed on the board
     player_board, computer_board = create_boards(board_size, num_ships)
