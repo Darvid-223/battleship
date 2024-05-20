@@ -132,22 +132,31 @@ def computer_turn(board, board_size):
             print(f"Computer shoots at ({shot_row + 1}, {shot_col + 1})")
             break
 
-def main():
+def setup_game():
+    """
+    Set up the game.
+    """
     clear_screen()
     welcome_screen()
-
     name, board_size = get_player_input()
     clear_screen()
     print(f"\nWelcome, {name}!\n")
+    return name, board_size
 
+def create_boards(board_size, num_ships):
+    """
+    Create and place ships on player and computer boards.
+    """
     player_board = Board(board_size)
     computer_board = Board(board_size)
-
-    num_ships = 5  # Define the number of ships to be placed on the board
-
     player_board.place_ships(num_ships)
     computer_board.place_ships(num_ships)
+    return player_board, computer_board
 
+def game_loop(player_board, computer_board, board_size):
+    """
+    Main game loop where player and computer take turns.
+    """
     while True:
         print("Player's Board:")
         player_board.display(show_ships=True)
@@ -168,6 +177,12 @@ def main():
         if player_board.all_ships_sunk():
             print("Sorry, you lost. Computer won!")
             break
-    
+
+def main():
+    name, board_size = setup_game()
+    num_ships = 5  # Define the number of ships to be placed on the board
+    player_board, computer_board = create_boards(board_size, num_ships)
+    game_loop(player_board, computer_board, board_size)
+
 
 main()
