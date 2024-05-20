@@ -7,6 +7,7 @@ from random import randint
 import os
 import ascii_art
 
+
 def welcome_screen():
     """
     Display the welcome screen with ASCII art and game instructions.
@@ -14,12 +15,14 @@ def welcome_screen():
     clear_screen()
     print(ascii_art.BATTLESHIP)
     print("\nWelcome to Battleship!\n")
-    
+
+
 def clear_screen():
     """
     Function to clear terminal.
     """
     os.system("cls")
+
 
 def get_player_input():
     """
@@ -40,8 +43,8 @@ def get_player_input():
             break
         else:
             print("Invalid choice, please choose again.")
-    
     return name, board_size
+
 
 class Board:
     def __init__(self, size):
@@ -112,7 +115,8 @@ class Board:
             if 'S' in row:
                 return False
         return True
-    
+
+
 def player_turn(board, board_size):
     """
     Handle the player's turn.
@@ -138,6 +142,7 @@ def player_turn(board, board_size):
         except ValueError:
             print("Invalid input. Enter numbers only.")
 
+
 def computer_turn(board, board_size):
     """
     Handle the computer's turn with random integer.
@@ -150,6 +155,7 @@ def computer_turn(board, board_size):
             print(f"Computer shoots at ({shot_row + 1}, {shot_col + 1})")
             break
 
+
 def setup_game():
     """
     Set up the game.
@@ -161,6 +167,7 @@ def setup_game():
     print(f"\nWelcome, {name}!\n")
     return name, board_size
 
+
 def create_boards(board_size, num_ships):
     """
     Create and place ships on player and computer boards.
@@ -170,6 +177,7 @@ def create_boards(board_size, num_ships):
     player_board.place_ships(num_ships)
     computer_board.place_ships(num_ships)
     return player_board, computer_board
+
 
 def game_loop(player_board, computer_board, board_size):
     """
@@ -195,6 +203,7 @@ def game_loop(player_board, computer_board, board_size):
         if player_board.all_ships_sunk():
             print("Sorry, you lost. Computer won!")
             break
+
 
 def main():
     name, board_size = setup_game()
