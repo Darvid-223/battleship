@@ -1,7 +1,50 @@
 # Battleship Game
+
 ## Introduction & Overview 
+
+Battleship Game is a classic naval warfare strategy game brought to life as a Python-based command-line application. This project showcases the application of Python programming concepts, including object-oriented design, randomization, and user interaction in a terminal-based environment. The game is designed for both casual players and coding enthusiasts who enjoy strategy games and wish to experience the nostalgic feel of playing Battleship.
+
+The Battleship Game offers a turn-based gameplay experience where players compete against a computer opponent. Players and the computer take turns to guess the location of each other's ships on a grid, aiming to sink all enemy ships first. The game provides immediate feedback on hits and misses, enhancing the interactive aspect and keeping players engaged throughout.
+
 ## Features
+
+This implementation includes features such as:
+
+- A welcome screen with ASCII art for an immersive start
+
+- Configurable board sizes for varied difficulty levels
+
+- Randomized ship placement for both player and computer
+
+- Clear visual feedback for hits, misses, and the final state of the game board
+
+- Cross-platform compatibility, ensuring smooth execution on different operating systems including Windows and Unix-based systems like Heroku
+
 ### Validator Testing
+
+### Bugs
+
+- Clear Screen Bug
+
+There was an issue where the clear_screen function did not work properly when the game was deployed on Heroku. The cls command, which is used to clear the screen on Windows, is not recognized on Unix-based systems like those used by Heroku.
+
+- Resolution
+
+The bug was resolved by updating the clear_screen function to use the appropriate command based on the operating system. The updated function checks the OS type and uses cls for Windows and clear for Unix-based systems:
+
+import os
+
+def clear_screen():
+    """
+    Function to clear terminal.
+    """
+    if os.name == 'nt':
+        os.system('cls')
+    elif os.name == 'posix':
+        os.system('clear')
+    else:
+        print("\n" * 100)  # Fallback in case of other OS types
+
 ## Technologies Used
 ### Tools and Resources
 
@@ -40,6 +83,8 @@ Choosing Visual Studio Code and WSL over Codeanywhere was a strategic decision t
 - I am deeply grateful to my mentor, Sheryl Goldberg, for her invaluable feedback and insightful suggestions, which greatly enhanced this project.
 
 - Special thanks to my friend Lucas Behrendt, whose feedback and tips from his experience in the same course were immensely helpful.
+
+- Special thanks to https://www.asciiart.eu/ for providing the ASCII art used in this project.
 
 This project was developed with the assistance of OpenAI's ChatGPT in the following areas:
 - **Code Validation**: ChatGPT helped validate the syntax and logic of the code.

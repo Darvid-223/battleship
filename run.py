@@ -19,17 +19,18 @@ def welcome_screen():
 
 def clear_screen():
     """
-    Function to clear terminal. Uses 'cls' on windows and 'clear' on other OS.
+    Function to clear terminal. Uses 'cls' on windows and 'clear' on UNIX-based OS.
     """
     if os.name == "nt":
         os.system("cls")
     else:
+        # For UNIX based OS.
         os.system("clear")
 
 
 def get_player_input():
     """
-    Get player input for name and board size.
+    Get player input for name and board size and number of ships.
     """
     name = input("Enter your name:\n")
 
@@ -48,7 +49,18 @@ def get_player_input():
             break
         else:
             print("Invalid choice, please choose again.")
-    return name, board_size
+
+    while True:
+        try:
+            num_ships = int(input("Choose the number of ships (1-10):\n"))
+            if 1 <= num_ships <= 10:
+                break
+            else:
+                print("Invalid choice, please choose a number between 1 and 10.")
+        except ValueError:
+            print("Invalid input, please enter a number between 1 and 10.")
+
+    return name, board_size, num_ships
 
 
 class Board:
@@ -174,10 +186,10 @@ def setup_game():
     """
     clear_screen()
     welcome_screen()
-    name, board_size = get_player_input()
+    name, board_size, num_ships = get_player_input()
     clear_screen()
     print(f"\nWelcome, {name}!\n")
-    return name, board_size
+    return name, board_size, num_ships
 
 
 def create_boards(board_size, num_ships):
@@ -222,8 +234,7 @@ def main():
     """
     Main function to initialize and run the Battleship game.
     """
-    name, board_size = setup_game()
-    num_ships = 5  # Define the number of ships to be placed on the board
+    name, board_size, num_ships = setup_game()
     player_board, computer_board = create_boards(board_size, num_ships)
     game_loop(player_board, computer_board, board_size)
 
