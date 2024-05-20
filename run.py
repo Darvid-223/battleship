@@ -19,7 +19,8 @@ def welcome_screen():
 
 def clear_screen():
     """
-    Function to clear terminal. Uses 'cls' on windows and 'clear' on UNIX-based OS.
+    Function to clear terminal. Uses 'cls' on windows
+    and 'clear' on UNIX-based OS.
     """
     if os.name == "nt":
         os.system("cls")
@@ -56,7 +57,8 @@ def get_player_input():
             if 1 <= num_ships <= 10:
                 break
             else:
-                print("Invalid choice, please choose a number between 1 and 10.")
+                print(
+                    "Invalid choice, please choose a number between 1 and 10.")
         except ValueError:
             print("Invalid input, please enter a number between 1 and 10.")
 
