@@ -45,23 +45,43 @@ def get_player_input():
 
 class Board:
     def __init__(self, size):
+        """
+        Initialize the game board with a given size.
+
+        Parameters:
+        size (int): The size of the board (number of rows and columns).
+        """
         self.size = size
         self.grid = [['~'] * size for _ in range(size)]
         self.ships = []
 
     def display(self, show_ships=False):
+        """
+        Display the game board.
+
+        Parameters:
+        show_ships (bool): If True, display the ships' positions.
+        If False, hide the ships' positions.
+        """
         # Print column numbers
         print("  " + " ".join([str(i) for i in range(1, self.size + 1)]))
+        # Get index and row from self.grid.
         for idx, row in enumerate(self.grid):
             if show_ships:
                 # Print row numbers and grid row as is
                 print(str(idx + 1) + " " + " ".join(row))
             else:
-                # Replace 'S' with '~' if ships should not be shown
+                # Replace S with ~ if ships should not be shown
                 print(str(idx + 1) + " " + " ".join([cell if cell != 'S' else '~' for cell in row]))
         print()
 
     def place_ships(self, num_ships):
+        """
+        Place a specified number of ships randomly on the board.
+
+        Parameters:
+        num_ships (int): The number of ships to place on the board.
+        """
         self.ships = []
         placed_ships = 0
         while placed_ships < num_ships:
@@ -107,11 +127,9 @@ def player_turn(board, board_size):
                     if result:
                         clear_screen()
                         print("Hit!")
-                        
                     else:
                         clear_screen()
                         print("Miss!")
-                        
                     break
                 else:
                     print("Invalid shot. Try again.")
