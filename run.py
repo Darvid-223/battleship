@@ -19,7 +19,7 @@ def welcome_screen():
 
 def clear_screen():
     """
-    Function to clear terminal.
+    Function to clear terminal. Uses 'cls' on windows and 'clear' on other OS.
     """
     if os.name == "nt":
         os.system("cls")
