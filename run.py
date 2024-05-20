@@ -21,7 +21,10 @@ def clear_screen():
     """
     Function to clear terminal.
     """
-    os.system("cls")
+    if os.name == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
 
 
 def get_player_input():
@@ -57,7 +60,7 @@ class Board:
         size (int): The size of the board (number of rows and columns).
         """
         self.size = size
-        self.grid = [['~'] * size for _ in range(size)]
+        self.grid = [["~"] * size for _ in range(size)]
         self.ships = []
 
     def display(self, show_ships=False):
@@ -79,7 +82,7 @@ class Board:
             else:
                 # Replace S with ~ if ships should not be shown
                 print(str(idx + 1) + " " + " ".join(
-                    [cell if cell != 'S' else '~' for cell in row]
+                    [cell if cell != "S" else "~" for cell in row]
                 ))
 
         print()
@@ -97,8 +100,8 @@ class Board:
         while placed_ships < num_ships:
             row = randint(0, self.size - 1)
             col = randint(0, self.size - 1)
-            if self.grid[row][col] == '~':
-                self.grid[row][col] = 'S'
+            if self.grid[row][col] == "~":
+                self.grid[row][col] = "S"
                 self.ships.append((row, col))
                 placed_ships += 1
 
@@ -106,11 +109,11 @@ class Board:
         """
         Take a shot at the specified position.
         """
-        if self.grid[row][col] == 'S':
-            self.grid[row][col] = 'X'  # Hit
+        if self.grid[row][col] == "S":
+            self.grid[row][col] = "X"  # Hit
             return True
-        elif self.grid[row][col] == '~':
-            self.grid[row][col] = 'O'  # Miss
+        elif self.grid[row][col] == "~":
+            self.grid[row][col] = "O"  # Miss
             return False
         return None  # Invalid shot (already taken)
 
@@ -119,7 +122,7 @@ class Board:
         Check if Game is Over.
         """
         for row in self.grid:
-            if 'S' in row:
+            if "S" in row:
                 return False
         return True
 
