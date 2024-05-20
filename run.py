@@ -61,6 +61,7 @@ class Board:
         self.ships = []
 
     def display(self, show_ships=False):
+        # This function was created with the assistance of OpenAI's ChatGPT.
         """
         Display the game board.
 
@@ -84,6 +85,7 @@ class Board:
         print()
 
     def place_ships(self, num_ships):
+        # This function was created with the assistance of OpenAI's ChatGPT.
         """
         Place a specified number of ships randomly on the board.
 
