@@ -249,5 +249,3 @@ This project was developed with the assistance of OpenAI's ChatGPT in the follow
 - **Real-Time Troubleshooting**: Supported real-time debugging and troubleshooting during the development process.
 
 Special thanks to [OpenAI's ChatGPT](https://openai.com/) for its invaluable support in refining the content and functionality of this project.
-
-
