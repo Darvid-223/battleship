@@ -71,6 +71,8 @@ I have previously studied Python through courses on [Udemy](https://www.udemy.co
 
 ### Validator Testing
 
+To ensure that the Python code adheres to PEP 8 standards, I used the online validator [PEP8CI](https://pep8ci.herokuapp.com/). This tool helped me identify and correct any issues related to code style and formatting, ensuring that the code is clean, readable, and follows best practices.
+
 ### Bugs
 
 - **Clear Screen Bug**
@@ -119,6 +121,8 @@ Various attempts were made to resolve this issue, including adding extra newline
 - [OpenAI's ChatGPT](https://openai.com/): Assisted in validating code, checking spelling, providing translations, offering coding advice, and supporting the refinement of the website's content and functionality. ChatGPT also played a role in generating content for documentation and assisting with real-time troubleshooting during development.
 
 - [Fontstyle](https://pypi.org/project/fontstyle/): Used to apply styles such as bold and italic to terminal text for enhanced user experience.
+
+- [PEP8CI](https://pep8ci.herokuapp.com/): Used for validating Python code to ensure adherence to PEP 8 standards.
 
 ## Deployment
 
