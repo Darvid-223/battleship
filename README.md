@@ -56,6 +56,12 @@ This implementation includes features such as:
 
 ![Gameplay](screenshots/board.png)
 
+- **In the game, the following symbols are used on the board:** 
+
+  - S: Indicates a ship is present at this position.
+  - O: Indicates a missed shot.
+  - ~: Indicates water where no shots have been fired.
+
 ![Player Victory Screen](screenshots/win.png)
 
 ![Player Lost Screen](screenshots/loss.png)
@@ -196,8 +202,8 @@ Choosing Visual Studio Code and WSL over Codeanywhere was a strategic decision t
 
 3. **Clone the Repository**: Open VS Code's integrated terminal, switch to your WSL environment, and clone the Battleship repository using Git:
     ```sh
-    git clone https://github.com/your-username/battleship-game.git
-    cd battleship-game
+    git clone https://github.com/darvid-223/battleship.git
+    cd battleship
     ```
 
 4. **Create a Virtual Environment**: It's recommended to use a virtual environment to manage dependencies.
