@@ -52,6 +52,8 @@ def get_player_input():
             break
         else:
             print("Invalid choice, please choose again.")
+            
+    print("\nEach ship occupies 1 coordinate or cell space.\n")  # Inform user about ship size
 
     while True:
         try:
@@ -162,7 +164,7 @@ def player_turn(board, board_size):
                         print(fontstyle.apply("Hit!", "bold/green"))
                     else:
                         print(fontstyle.apply("Miss!", "bold/red"))
-                    print("\n" * 2)  # Add extra space
+                    print("\n")  # Add extra space
                     break
                 else:
                     print("Invalid shot. Try again.")
@@ -181,8 +183,8 @@ def computer_turn(board, board_size):
         shot_row = randint(0, board_size - 1)
         shot_col = randint(0, board_size - 1)
         if board.take_shot(shot_row, shot_col) is not None:
-
             print(f"Computer shoots at ({shot_row + 1}, {shot_col + 1})")
+            print("\n")
             break
 
 
