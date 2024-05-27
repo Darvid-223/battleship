@@ -5,7 +5,7 @@ Import ascii_art to display ASCII art.
 Import fontstyle for terminal font.
 """
 from random import randint
-import os
+from os import system, name
 import ascii_art
 import fontstyle
 
@@ -24,11 +24,11 @@ def clear_screen():
     Function to clear terminal. Uses 'cls' on windows
     and 'clear' on UNIX-based OS.
     """
-    if os.name == "nt":
-        os.system("cls")
+    if name == "nt":
+        system("cls")
     else:
         # For UNIX based OS.
-        os.system("clear")
+        system("clear")
 
 
 def get_player_input():
@@ -217,6 +217,7 @@ def game_loop(player_board, computer_board, board_size):
         player_board.display(show_ships=True)
 
         print("Computer's Board:")
+        # Change show_ships to True for debugging
         computer_board.display(show_ships=False)
 
         # Player's turn

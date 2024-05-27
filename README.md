@@ -26,7 +26,6 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-
 ## Introduction & Overview 
 
 Battleship Game is a classic naval warfare strategy game brought to life as a Python-based command-line application. This project showcases the application of Python programming concepts, including object-oriented design, randomization, and user interaction in a terminal-based environment. The game is designed for both casual players and coding enthusiasts who enjoy strategy games and wish to experience the nostalgic feel of playing Battleship.
@@ -127,7 +126,7 @@ def clear_screen():
 
 **Heroku Board Size Bug**
 
-![Welcome Screen](screenshots/bug.png)
+![Heroku Board Size Bug](screenshots/bug.png)
 
 There is an issue where the `clear_screen` function does not clear the terminal correctly when the game is played with a large board size. This bug occurs inconsistently and primarily affects the game's display in the Heroku environment. 
 
