@@ -2,10 +2,12 @@
 Import randint from random to generate bot coordinates.
 Import os to clear the terminal.
 Import ascii_art to display ASCII art.
+Import fontstyle for terminal font
 """
 from random import randint
 import os
 import ascii_art
+import fontstyle
 
 
 def welcome_screen():
@@ -14,7 +16,7 @@ def welcome_screen():
     """
     clear_screen()
     print(ascii_art.BATTLESHIP)
-    print("\nWelcome to Battleship!\n")
+    print(fontstyle.apply("\nWelcome to Battleship!\n", "bold/italic"))
 
 
 def clear_screen():
@@ -78,13 +80,13 @@ class Board:
         self.ships = []
 
     def display(self, show_ships=False):
-        # This function was created with the assistance of OpenAI's ChatGPT.
         """
         Display the game board.
 
         Parameters:
         show_ships (bool): If True, display the ships' positions.
         If False, hide the ships' positions.
+        This function was created with the assistance of OpenAI's ChatGPT.
         """
         # Print column numbers
         print("  " + " ".join([str(i) for i in range(1, self.size + 1)]))
@@ -102,12 +104,12 @@ class Board:
         print()
 
     def place_ships(self, num_ships):
-        # This function was created with the assistance of OpenAI's ChatGPT.
         """
         Place a specified number of ships randomly on the board.
 
         Parameters:
         num_ships (int): The number of ships to place on the board.
+        This function was created with the assistance of OpenAI's ChatGPT.
         """
         self.ships = []
         placed_ships = 0
