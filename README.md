@@ -103,36 +103,28 @@ In addition to using the PEP 8 validator, I performed extensive manual testing t
 
 - **Clear Screen Bug**
 
+![Heroku Board Size Bug](screenshots/bug.png)
+
 There was an issue where the clear_screen function did not work properly when the game was deployed on Heroku. The cls command, which is used to clear the screen on Windows, is not recognized on Unix-based systems like those used by Heroku.
 
 - **Resolution**
 
 The bug was resolved by updating the clear_screen function to use the appropriate command based on the operating system. The updated function checks the OS type and uses cls for Windows and clear for Unix-based systems:
 
-import os
+```python
+from os import system, name
 
 def clear_screen():
     """
-    Function to clear terminal.
+    Function to clear terminal. Uses 'cls' on windows
+    and 'clear' on UNIX-based OS.
     """
-    if os.name == 'nt':
-        os.system('cls')
-    elif os.name == 'posix':
-        os.system('clear')
+    if name == "nt":
+        system("cls")
     else:
-        print("\n" * 100)  # Fallback in case of other OS types
-
-- **Unresolved Bugs**
-
-**Heroku Board Size Bug**
-
-![Heroku Board Size Bug](screenshots/bug.png)
-
-There is an issue where the `clear_screen` function does not clear the terminal correctly when the game is played with a large board size. This bug occurs inconsistently and primarily affects the game's display in the Heroku environment. 
-
-- **Resolution Attempts**
-
-Various attempts were made to resolve this issue, including adding extra newline characters to force the screen to clear. However, the problem persists specifically with the large board size. This issue is still under investigation.
+        # For UNIX based OS.
+        system("clear")
+```
 
 ## Technologies Used
 
