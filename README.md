@@ -30,7 +30,7 @@ Battleship Game is a classic naval warfare strategy game brought to life as a Py
 
 The Battleship Game offers a turn-based gameplay experience where players compete against a computer opponent. Players and the computer take turns to guess the location of each other's ships on a grid, aiming to sink all enemy ships first. The game provides immediate feedback on hits and misses, enhancing the interactive aspect and keeping players engaged throughout.
 
-You can play the game live [here](https://battleship-3-f90d3c0779fd.herokuapp.com/){:target="_blank"}.
+You can play the game live [here](https://battleship-3-f90d3c0779fd.herokuapp.com/).
 
 ## Features
 
@@ -88,13 +88,13 @@ Some of the methods used in this project include:
 
 - **`display` Method:** This function displays the game board. I used the enumerate function to loop over the grid while keeping track of the row index. This simplifies accessing both the row data and its corresponding index in a single loop. This method was created the assistance of OpenAI's ChatGPT.
 
-My background knowledge in Python and OOP principles was significantly enhanced through courses on [Udemy](https://www.udemy.com/course/100-days-of-code/){:target="_blank"} and [Codecademy](https://www.codecademy.com/catalog/language/python){:target="_blank"}. Specifically, lessons 20 - 22 in the Udemy course, which covered the development of Snake and Pong games, were particularly useful in learning how to implement classes and manage game logic.
+My background knowledge in Python and OOP principles was significantly enhanced through courses on [Udemy](https://www.udemy.com/course/100-days-of-code/) and [Codecademy](https://www.codecademy.com/catalog/language/python). Specifically, lessons 20 - 22 in the Udemy course, which covered the development of Snake and Pong games, were particularly useful in learning how to implement classes and manage game logic.
 
 ## Testing
 
 ### Validator Testing
 
-To ensure that the Python code adheres to PEP 8 standards, I used the online validator [PEP8CI](https://pep8ci.herokuapp.com/){:target="_blank"}. This tool helped me identify and correct any issues related to code style and formatting, ensuring that the code is clean, readable, and follows best practices.
+To ensure that the Python code adheres to PEP 8 standards, I used the online validator [PEP8CI](https://pep8ci.herokuapp.com/). This tool helped me identify and correct any issues related to code style and formatting, ensuring that the code is clean, readable, and follows best practices.
 
 ### Manual Testing
 
@@ -148,25 +148,25 @@ Instead of importing complete os library only 'system' and 'name' is imported. T
 
 ### Tools and Resources
 
-- [Git](https://git-scm.com/){:target="_blank"}: Employed for version control, enabling regular commits to Git and updates to GitHub from the terminal in Gitpod.
+- [Git](https://git-scm.com/): Employed for version control, enabling regular commits to Git and updates to GitHub from the terminal in Gitpod.
 
-- [GitHub](https://github.com/){:target="_blank"}: Hosts the repository containing the project's code. GitHub Pages also hosts the live version of the website.
+- [GitHub](https://github.com/): Hosts the repository containing the project's code. GitHub Pages also hosts the live version of the website.
 
-- [Visual Studio Code](https://code.visualstudio.com/){:target="_blank"}: The code editor of choice for developing the website, offering powerful coding and debugging tools.
+- [Visual Studio Code](https://code.visualstudio.com/): The code editor of choice for developing the website, offering powerful coding and debugging tools.
 
-- [OpenAI's ChatGPT](https://openai.com/){:target="_blank"}: Assisted in validating code, checking spelling, providing translations, offering coding advice, and supporting the refinement of the website's content and functionality. ChatGPT also played a role in generating content for documentation and assisting with real-time troubleshooting during development.
+- [OpenAI's ChatGPT](https://openai.com/): Assisted in validating code, checking spelling, providing translations, offering coding advice, and supporting the refinement of the website's content and functionality. ChatGPT also played a role in generating content for documentation and assisting with real-time troubleshooting during development.
 
-- [Fontstyle](https://pypi.org/project/fontstyle/){:target="_blank"}: Used to apply styles such as bold and italic to terminal text for enhanced user experience.
+- [Fontstyle](https://pypi.org/project/fontstyle/): Used to apply styles such as bold and italic to terminal text for enhanced user experience.
 
-- [PEP8CI](https://pep8ci.herokuapp.com/){:target="_blank"}: Used for validating Python code to ensure adherence to PEP 8 standards.
+- [PEP8CI](https://pep8ci.herokuapp.com/): Used for validating Python code to ensure adherence to PEP 8 standards.
 
-- [Heroku](https://www.heroku.com/){:target="_blank"}: Used for deploying the live version of the Battleship game, providing a cloud platform for easy access and testing.
+- [Heroku](https://www.heroku.com/): Used for deploying the live version of the Battleship game, providing a cloud platform for easy access and testing.
 
 ## Deployment
 
 ### Heroku
 
-The Battleship game is deployed on Heroku for easy access. You can play the game live [here](https://battleship-3-f90d3c0779fd.herokuapp.com/){:target="_blank"}.
+The Battleship game is deployed on Heroku for easy access. You can play the game live [here](https://battleship-3-f90d3c0779fd.herokuapp.com/).
 
 1. **Create a New Heroku App**: Log in to your Heroku account and create a new app. You can do this via the Heroku dashboard or the Heroku CLI.
 
@@ -238,7 +238,7 @@ Choosing Visual Studio Code and WSL over Codeanywhere was a strategic decision t
 
 - Special thanks to https://www.asciiart.eu/ for providing the ASCII art used in this project.
 
-- Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/){:target="_blank"} for providing comprehensive lessons on Python and object-oriented programming, which significantly contributed to the development of this project. Specifically, lessons 20 - 22 on creating Snake and Pong games were particularly useful in learning how to implement classes effectively.
+- Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/) for providing comprehensive lessons on Python and object-oriented programming, which significantly contributed to the development of this project. Specifically, lessons 20 - 22 on creating Snake and Pong games were particularly useful in learning how to implement classes effectively.
 
 This project was developed with the assistance of OpenAI's ChatGPT in the following areas:
 - **Code Validation**: ChatGPT helped validate the syntax and logic of the code.
@@ -248,6 +248,6 @@ This project was developed with the assistance of OpenAI's ChatGPT in the follow
 - **Content Generation**: Assisted in generating content for the README and other documentation.
 - **Real-Time Troubleshooting**: Supported real-time debugging and troubleshooting during the development process.
 
-Special thanks to [OpenAI's ChatGPT](https://openai.com/){:target="_blank"} for its invaluable support in refining the content and functionality of this project.
+Special thanks to [OpenAI's ChatGPT](https://openai.com/) for its invaluable support in refining the content and functionality of this project.
 
 
