@@ -1,5 +1,28 @@
 # Battleship Game
 
+- [Battleship Game](#battleship-game)
+  * [Introduction & Overview](#introduction---overview)
+  * [Features](#features)
+  * [Rationale for Board Class Design](#rationale-for-board-class-design)
+    + [Introduction](#introduction)
+    + [Why Use a Class for the Board?](#why-use-a-class-for-the-board-)
+    + [My Python Training](#my-python-training)
+    + [Validator Testing](#validator-testing)
+    + [Bugs](#bugs)
+  * [Technologies Used](#technologies-used)
+    + [Tools and Resources](#tools-and-resources)
+  * [Deployment](#deployment)
+    + [Heroku](#heroku)
+  * [Local Development Setup](#local-development-setup)
+    + [Introduction](#introduction-1)
+    + [Prerequisites](#prerequisites)
+    + [Why Visual Studio Code and WSL?](#why-visual-studio-code-and-wsl-)
+    + [Setting Up the Environment](#setting-up-the-environment)
+  * [Credits & Acknowledgments](#credits---acknowledgments)
+    + [Acknowledgements](#acknowledgements)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 ## Introduction & Overview 
 
 Battleship Game is a classic naval warfare strategy game brought to life as a Python-based command-line application. This project showcases the application of Python programming concepts, including object-oriented design, randomization, and user interaction in a terminal-based environment. The game is designed for both casual players and coding enthusiasts who enjoy strategy games and wish to experience the nostalgic feel of playing Battleship.
@@ -19,6 +42,10 @@ This implementation includes features such as:
 - Clear visual feedback for hits, misses, and the final state of the game board
 
 - Cross-platform compatibility, ensuring smooth execution on different operating systems including Windows and Unix-based systems like Heroku
+
+### Screenshots
+
+![Welcome Screen](screenshots/welcomescreen.png)
 
 ## Rationale for Board Class Design
 
@@ -83,7 +110,13 @@ def clear_screen():
 
 The Battleship game is deployed on Heroku for easy access. You can play the game live [here](https://battleship-3-f90d3c0779fd.herokuapp.com/).
 
+1. **Create a New Heroku App**: Log in to your Heroku account and create a new app. You can do this via the Heroku dashboard or the Heroku CLI.
 
+2. **Set Buildpacks**: Set the buildpacks for Python and Node.js to ensure that Heroku correctly handles the dependencies.
+
+3. **Link to GitHub Repository**: Link your Heroku app to your GitHub repository. 
+
+4. **Deploy the Application**: Enable automatic deploys or manually deploy the branch of your choice. This project is automatically deployed.
 
 ## Local Development Setup
 
