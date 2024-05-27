@@ -2,7 +2,7 @@
 Import randint from random to generate bot coordinates.
 Import os to clear the terminal.
 Import ascii_art to display ASCII art.
-Import fontstyle for terminal font
+Import fontstyle for terminal font.
 """
 from random import randint
 import os
@@ -52,7 +52,7 @@ def get_player_input():
             break
         else:
             print("Invalid choice, please choose again.")
-            
+
     print("\nEach ship occupies 1 coordinate or cell space.\n")  # Inform user about ship size
 
     while True:
@@ -65,8 +65,6 @@ def get_player_input():
                     "Invalid choice, please choose a number between 1 and 10.")
         except ValueError:
             print("Invalid input, please enter a number between 1 and 10.")
-
-    print("\nEach ship occupies 1 coordinate or cell space.\n")
 
     return name, board_size, num_ships
 
