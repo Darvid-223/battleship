@@ -76,6 +76,25 @@ I have previously studied Python through courses on [Udemy](https://www.udemy.co
 
 To ensure that the Python code adheres to PEP 8 standards, I used the online validator [PEP8CI](https://pep8ci.herokuapp.com/). This tool helped me identify and correct any issues related to code style and formatting, ensuring that the code is clean, readable, and follows best practices.
 
+### Manual Testing
+
+In addition to using the PEP 8 validator, I performed extensive manual testing to ensure the game's functionality and user experience were up to standard. Here are some of the manual tests conducted:
+
+- **Input Validation:** 
+  - Tested various valid and invalid inputs for selecting the board size (e.g., "small", "medium", "large", "123" and other random inputs).
+  - Tested number of ships input with values within and outside the valid range (1-10).
+
+- **Gameplay Testing:**
+  - Tested gameplay by running multiple sessions with different board sizes and ship numbers.
+  - Verified that hits and misses were correctly registered on both the player's and the computer's boards.
+  - Ensured that the game correctly identified when all ships were sunk, and appropriate win/loss messages were displayed.
+
+- **Edge Cases:**
+  - Entered non-numeric values for row and column inputs during the game to ensure the program handled such cases gracefully.
+
+- **Cross-Platform Testing:**
+  - Ran the game on different operating systems, including Windows and Unix-based systems, to ensure that the `clear_screen` function worked correctly across platforms.
+
 ### Bugs
 
 - **Clear Screen Bug**
