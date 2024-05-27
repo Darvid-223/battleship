@@ -3,6 +3,7 @@
 - [Battleship Game](#battleship-game)
   * [Introduction & Overview](#introduction---overview)
   * [Features](#features)
+    + [Screenshots](#screenshots)
   * [Rationale for Board Class Design](#rationale-for-board-class-design)
     + [Introduction](#introduction)
     + [Why Use a Class for the Board?](#why-use-a-class-for-the-board-)
@@ -69,6 +70,8 @@ The decision to implement the game board as a class in this Battleship game proj
 
 I have previously studied Python through courses on [Udemy](https://www.udemy.com/course/100-days-of-code/) and [Codecademy](https://www.codecademy.com/catalog/language/python), which included lessons on object-oriented programming. This background knowledge helped me understand and apply the principles of OOP effectively in this project.
 
+## Testing
+
 ### Validator Testing
 
 To ensure that the Python code adheres to PEP 8 standards, I used the online validator [PEP8CI](https://pep8ci.herokuapp.com/). This tool helped me identify and correct any issues related to code style and formatting, ensuring that the code is clean, readable, and follows best practices.
@@ -96,7 +99,7 @@ def clear_screen():
     else:
         print("\n" * 100)  # Fallback in case of other OS types
 
-- Unresolve bugs
+- **Unresolved Bugs**
 
 **Heroku Board Size Bug**
 
@@ -201,11 +204,6 @@ Choosing Visual Studio Code and WSL over Codeanywhere was a strategic decision t
 - Special thanks to https://www.asciiart.eu/ for providing the ASCII art used in this project.
 
 - Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/) for providing comprehensive lessons on Python and object-oriented programming, which significantly contributed to the development of this project.
-
-- [Udemy's Snake Game Part 1](https://www.udemy.com/course/100-days-of-code/learn/lecture/20356587#overview)
-- [Udemy's Snake Game Part 2](https://www.udemy.com/course/100-days-of-code/learn/lecture/20361125#overview)
-- [Udemy's Pong Game](https://www.udemy.com/course/100-days-of-code/learn/lecture/20414753#overview)
-
 
 This project was developed with the assistance of OpenAI's ChatGPT in the following areas:
 - **Code Validation**: ChatGPT helped validate the syntax and logic of the code.
