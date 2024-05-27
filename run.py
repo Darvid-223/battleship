@@ -36,7 +36,7 @@ def get_player_input():
     Get player input for name and board size and number of ships.
     """
     name = input("Enter your name:\n")
-
+    # Prompt for board size until valid input is provided.
     while True:
         size_choice = input("Choose board size (small, medium, large):\n")\
                       .lower()
@@ -53,8 +53,9 @@ def get_player_input():
         else:
             print("Invalid choice, please choose again.")
 
-    print("\nEach ship occupies 1 coordinate or cell space.\n")  # Inform user about ship size
+    print("\nEach ship occupies 1 coordinate or cell space.\n")
 
+    # Prompt for number of ships until valid input is provided.
     while True:
         try:
             num_ships = int(input("Choose the number of ships (1-10):\n"))
@@ -220,7 +221,7 @@ def game_loop(player_board, computer_board, board_size):
         print("Computer's Board:")
         computer_board.display(show_ships=False)
         # For debugging, show ship position (1 index)
-        #print(f"Computer's ship positions: "
+        # print(f"Computer's ship positions: "
         #      f"{[(row + 1, col + 1) for row, col in computer_board.ships]} "
         #      f"(1 index)")
         # Player's turn

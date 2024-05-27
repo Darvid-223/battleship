@@ -20,6 +20,25 @@ This implementation includes features such as:
 
 - Cross-platform compatibility, ensuring smooth execution on different operating systems including Windows and Unix-based systems like Heroku
 
+## Rationale for Board Class Design
+
+### Introduction
+
+The decision to implement the game board as a class in this Battleship game project was made to use the principles of object-oriented programming (OOP). This approach provides a structured and modular way to handle the game logic, making the code more maintainable and extensible. Normally, I would not use a class in a project as simple as this, but I am using it here to demonstrate and apply OOP principles.
+
+### Why Use a Class for the Board?
+
+**Reusability:** The class can be easily reused and extended for different versions of the game. For example, if we wanted to add more complex features like different ship sizes or special rules, we can do so by extending the Board class without affecting the rest of the code.
+
+**Readability:** Classes help in breaking down the code into manageable parts. By separating the board logic into its own class, the main game logic becomes clearer and easier to follow.
+
+**Maintainability:** If any changes need to be made to the board logic, such as changing how ships are placed or how the board is displayed, these changes can be made within the Board class without affecting other parts of the program.
+
+### My Python Training
+
+I have previously studied Python through courses on [Udemy](https://www.udemy.com/course/100-days-of-code/) and [Codecademy](https://www.codecademy.com/catalog/language/python), which included lessons on object-oriented programming. This background knowledge helped me understand and apply the principles of OOP effectively in this project.
+
+
 ### Validator Testing
 
 ### Bugs
