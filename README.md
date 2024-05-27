@@ -81,7 +81,21 @@ def clear_screen():
 
 ### Heroku
 
+The Battleship game is deployed on Heroku for easy access. You can play the game live [here](https://battleship-3-f90d3c0779fd.herokuapp.com/).
+
+
+
 ## Local Development Setup
+
+### Introduction
+
+While the course recommends using Codeanywhere as a cloud-based development environment, for this project, I opted to use Visual Studio Code installed locally on my Windows computer. My familiarity with Visual Studio Code and its immediate responsiveness compared to the process of setting up and loading Codeanywhere each time greatly influenced this choice.
+
+To replicate this local development environment, I installed the following programs to my system:
+
+- Visual Studio Code as my primary code editor.
+- Windows Subsystem for Linux (WSL) for a Linux-compatible terminal and development environment on Windows.
+- Git for version control and cloning the project repository.
 
 ### Prerequisites
 
@@ -89,8 +103,7 @@ Before you can run the Battleship game locally, you need to install the required
 
 ```sh
 pip install fontstyle
-
-### Introduction
+```
 
 ### Why Visual Studio Code and WSL?
 
@@ -98,9 +111,31 @@ Visual Studio Code is a powerful and versatile code editor that supports a wide 
 
 Choosing Visual Studio Code and WSL over Codeanywhere was a strategic decision to optimize my development process, capitalizing on speed and efficiency without sacrificing the versatility and power needed for complex web development tasks.
 
-### Prerequisites
-
 ### Setting Up the Environment
+
+1. **Install WSL**: Follow the instructions provided by Microsoft to install WSL on your Windows machine. Choose a Linux distribution of your preference from the Microsoft Store (Ubuntu is a popular choice).
+
+3. **Clone the Repository**: Open VS Code's integrated terminal, switch to your WSL environment, and clone the Battleship repository using Git:
+    ```sh
+    git clone https://github.com/your-username/battleship-game.git
+    cd battleship-game
+    ``
+
+4. **Create a Virtual Environment**: It's recommended to use a virtual environment to manage dependencies.
+    ```sh
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+5. **Install Dependencies**: Install all necessary dependencies using the `requirements.txt` file.
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+6. **Run the Application**: Start the game by running the main Python file.
+    ```sh
+    python run.py
+    ```
 
 ## Credits & Acknowledgments
 
@@ -111,6 +146,8 @@ Choosing Visual Studio Code and WSL over Codeanywhere was a strategic decision t
 - Special thanks to my friend Lucas Behrendt, whose feedback and tips from his experience in the same course were immensely helpful.
 
 - Special thanks to https://www.asciiart.eu/ for providing the ASCII art used in this project.
+
+- Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/) for providing comprehensive lessons on Python and object-oriented programming, which significantly contributed to the development of this project.
 
 This project was developed with the assistance of OpenAI's ChatGPT in the following areas:
 - **Code Validation**: ChatGPT helped validate the syntax and logic of the code.
