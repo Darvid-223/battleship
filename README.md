@@ -42,6 +42,12 @@ This implementation includes features such as:
 
 - Configurable board sizes for varied difficulty levels
 
+- **In the game, the following symbols are used on the board:** 
+
+  - S: Indicates a ship is present at this position.
+  - O: Indicates a missed shot.
+  - ~: Indicates water where no shots have been fired.
+
 - Randomized ship placement for both player and computer
 
 - Clear visual feedback for hits, misses, and the final state of the game board
@@ -56,33 +62,35 @@ This implementation includes features such as:
 
 ![Gameplay](screenshots/board.png)
 
-- **In the game, the following symbols are used on the board:** 
-
-  - S: Indicates a ship is present at this position.
-  - O: Indicates a missed shot.
-  - ~: Indicates water where no shots have been fired.
-
 ![Player Victory Screen](screenshots/win.png)
 
 ![Player Lost Screen](screenshots/loss.png)
 
-## Rationale for Board Class Design
+## Project Rationale and Design Decisions
 
-### Introduction
+### Object-Oriented Programming
 
-The decision to implement the game board as a class in this Battleship game project was made to use the principles of object-oriented programming (OOP). This approach provides a structured and modular way to handle the game logic, making the code more maintainable and extensible. Normally, I would not use a class in a project as simple as this, but I am using it here to demonstrate and apply OOP principles.
+I decided to use object-oriented programming principles to organize the game's logic in a structured and modular way. Specifically, the `Board` class includes all the functionality related to the game board, such as ship placement, displaying the board, and handling shots. This organization provides several benefits:
 
-### Why Use a Class for the Board?
+- **Reusability:** The class can be reused and extended for different versions of the game.
 
-**Reusability:** The class can be easily reused and extended for different versions of the game. For example, if I wanted to add more complex features like different ship sizes or special rules, I can do so by extending the Board class without affecting the rest of the code.
+- **Readability:** By separating the board logic into its own class, the main game logic becomes clearer and easier to follow.
 
-**Readability:** Classes help in breaking down the code into manageable parts. By separating the board logic into its own class, the main game logic becomes clearer and easier to follow.
+- **Maintainability:** Changes to the board logic can be made within the `Board` class without affecting other parts of the program.
 
-**Maintainability:** If any changes need to be made to the board logic, such as changing how ships are placed or how the board is displayed, these changes can be made within the Board class without affecting other parts of the program.
+Some of the methods used in this project include:
 
-### My Python Training
+- **Grid Generation Using Loops:** Instead of hardcoding the grid, I used a loop to generate it based on the selected board size. This makes the code more flexible and adaptable to different board sizes.
 
-I have previously studied Python through courses on [Udemy](https://www.udemy.com/course/100-days-of-code/) and [Codecademy](https://www.codecademy.com/catalog/language/python), which included lessons on object-oriented programming. This background knowledge helped me understand and apply the principles of OOP effectively in this project.
+- **`place_ships` Method:** This method randomly places a specified number of ships on the board. It ensures that ships are placed without overlapping and within the board's boundaries.
+
+- **`take_shot` Method:** This method handles the logic for a shot taken at a specific position on the board. It updates the board's state and provides feedback on whether the shot was a hit or a miss.
+
+- **`game_loop` Function:** This function manages the main game loop, alternating turns between the player and the computer, and checks for win conditions.
+
+- **`display` Method:** This function displays the game board. I used the enumerate function to loop over the grid while keeping track of the row index. This simplifies accessing both the row data and its corresponding index in a single loop. This function was created the assistance of OpenAI's ChatGPT.
+
+My background knowledge in Python and OOP principles was significantly enhanced through courses on [Udemy](https://www.udemy.com/course/100-days-of-code/) and [Codecademy](https://www.codecademy.com/catalog/language/python). Specifically, lessons 20 - 22 in the Udemy course, which covered the development of Snake and Pong games, were particularly useful in learning how to implement classes and manage game logic.
 
 ## Testing
 
@@ -95,7 +103,7 @@ To ensure that the Python code adheres to PEP 8 standards, I used the online val
 In addition to using the PEP 8 validator, I performed extensive manual testing to ensure the game's functionality and user experience were up to standard. Here are some of the manual tests conducted:
 
 - **Input Validation:** 
-  - Tested various valid and invalid inputs for selecting the board size (e.g., "small", "medium", "large", "123" and other random inputs).
+  - Tested various valid and invalid inputs for selecting the board size (e.g., "small", "medium", "large", "123" and other random inputs that does not match the instructions).
   - Tested number of ships input with values within and outside the valid range (1-10).
 
 - **Gameplay Testing:**
@@ -232,7 +240,7 @@ Choosing Visual Studio Code and WSL over Codeanywhere was a strategic decision t
 
 - Special thanks to https://www.asciiart.eu/ for providing the ASCII art used in this project.
 
-- Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/) for providing comprehensive lessons on Python and object-oriented programming, which significantly contributed to the development of this project.
+- Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/) for providing comprehensive lessons on Python and object-oriented programming, which significantly contributed to the development of this project. Specifically, lessons 20 - 22 on creating Snake and Pong games were particularly useful in learning how to implement classes effectively.
 
 This project was developed with the assistance of OpenAI's ChatGPT in the following areas:
 - **Code Validation**: ChatGPT helped validate the syntax and logic of the code.
