@@ -8,7 +8,9 @@
     + [Introduction](#introduction)
     + [Why Use a Class for the Board?](#why-use-a-class-for-the-board-)
     + [My Python Training](#my-python-training)
+  * [Testing](#testing)
     + [Validator Testing](#validator-testing)
+    + [Manual Testing](#manual-testing)
     + [Bugs](#bugs)
   * [Technologies Used](#technologies-used)
     + [Tools and Resources](#tools-and-resources)
@@ -24,11 +26,14 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
+
 ## Introduction & Overview 
 
 Battleship Game is a classic naval warfare strategy game brought to life as a Python-based command-line application. This project showcases the application of Python programming concepts, including object-oriented design, randomization, and user interaction in a terminal-based environment. The game is designed for both casual players and coding enthusiasts who enjoy strategy games and wish to experience the nostalgic feel of playing Battleship.
 
 The Battleship Game offers a turn-based gameplay experience where players compete against a computer opponent. Players and the computer take turns to guess the location of each other's ships on a grid, aiming to sink all enemy ships first. The game provides immediate feedback on hits and misses, enhancing the interactive aspect and keeping players engaged throughout.
+
+You can play the game live [here](https://battleship-3-f90d3c0779fd.herokuapp.com/).
 
 ## Features
 
@@ -146,6 +151,8 @@ Various attempts were made to resolve this issue, including adding extra newline
 
 - [PEP8CI](https://pep8ci.herokuapp.com/): Used for validating Python code to ensure adherence to PEP 8 standards.
 
+- [Heroku](https://www.heroku.com/): Used for deploying the live version of the Battleship game, providing a cloud platform for easy access and testing.
+
 ## Deployment
 
 ### Heroku
@@ -194,7 +201,7 @@ Choosing Visual Studio Code and WSL over Codeanywhere was a strategic decision t
     ```sh
     git clone https://github.com/your-username/battleship-game.git
     cd battleship-game
-    ``
+    ```
 
 4. **Create a Virtual Environment**: It's recommended to use a virtual environment to manage dependencies.
     ```sh
