@@ -64,6 +64,8 @@ def get_player_input():
         except ValueError:
             print("Invalid input, please enter a number between 1 and 10.")
 
+    print("\nEach ship occupies 1 coordinate or cell space.\n")
+    
     return name, board_size, num_ships
 
 
