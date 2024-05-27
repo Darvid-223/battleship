@@ -1,6 +1,6 @@
 """
 Import randint from random to generate bot coordinates.
-Import os to clear the terminal.
+Import system and name from os to clear the terminal.
 Import ascii_art to display ASCII art.
 Import fontstyle for terminal font.
 """

@@ -56,6 +56,10 @@ This implementation includes features such as:
 
 ![Gameplay](screenshots/board.png)
 
+![Player Victory Screen](screenshots/win.png)
+
+![Player Lost Screen](screenshots/loss.png)
+
 ## Rationale for Board Class Design
 
 ### Introduction
@@ -125,6 +129,8 @@ def clear_screen():
         # For UNIX based OS.
         system("clear")
 ```
+
+Instead of importing complete os library only 'system' and 'name' is imported. This solved the issue.
 
 ## Technologies Used
 
