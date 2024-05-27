@@ -28,7 +28,7 @@ The decision to implement the game board as a class in this Battleship game proj
 
 ### Why Use a Class for the Board?
 
-**Reusability:** The class can be easily reused and extended for different versions of the game. For example, if we wanted to add more complex features like different ship sizes or special rules, we can do so by extending the Board class without affecting the rest of the code.
+**Reusability:** The class can be easily reused and extended for different versions of the game. For example, if I wanted to add more complex features like different ship sizes or special rules, I can do so by extending the Board class without affecting the rest of the code.
 
 **Readability:** Classes help in breaking down the code into manageable parts. By separating the board logic into its own class, the main game logic becomes clearer and easier to follow.
 
@@ -75,13 +75,20 @@ def clear_screen():
 
 - [OpenAI's ChatGPT](https://openai.com/): Assisted in validating code, checking spelling, providing translations, offering coding advice, and supporting the refinement of the website's content and functionality. ChatGPT also played a role in generating content for documentation and assisting with real-time troubleshooting during development.
 
-## Deployment
+- [Fontstyle](https://pypi.org/project/fontstyle/): Used to apply styles such as bold and italic to terminal text for enhanced user experience.
 
-### Github Pages
+## Deployment
 
 ### Heroku
 
 ## Local Development Setup
+
+### Prerequisites
+
+Before you can run the Battleship game locally, you need to install the required Python packages, including `fontstyle`. You can do this using pip:
+
+```sh
+pip install fontstyle
 
 ### Introduction
 

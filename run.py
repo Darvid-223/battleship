@@ -219,11 +219,8 @@ def game_loop(player_board, computer_board, board_size):
         player_board.display(show_ships=True)
 
         print("Computer's Board:")
-        computer_board.display(show_ships=False)
-        # For debugging, show ship position (1 index)
-        # print(f"Computer's ship positions: "
-        #      f"{[(row + 1, col + 1) for row, col in computer_board.ships]} "
-        #      f"(1 index)")
+        computer_board.display(show_ships=True)
+
         # Player's turn
         player_turn(computer_board, board_size)
         if computer_board.all_ships_sunk():
