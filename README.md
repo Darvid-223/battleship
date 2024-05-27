@@ -47,6 +47,10 @@ This implementation includes features such as:
 
 ![Welcome Screen](screenshots/welcomescreen.png)
 
+![Setup Screen](screenshots/setup.png)
+
+![Gameplay](screenshots/board.png)
+
 ## Rationale for Board Class Design
 
 ### Introduction
@@ -65,16 +69,15 @@ The decision to implement the game board as a class in this Battleship game proj
 
 I have previously studied Python through courses on [Udemy](https://www.udemy.com/course/100-days-of-code/) and [Codecademy](https://www.codecademy.com/catalog/language/python), which included lessons on object-oriented programming. This background knowledge helped me understand and apply the principles of OOP effectively in this project.
 
-
 ### Validator Testing
 
 ### Bugs
 
-- Clear Screen Bug
+- **Clear Screen Bug**
 
 There was an issue where the clear_screen function did not work properly when the game was deployed on Heroku. The cls command, which is used to clear the screen on Windows, is not recognized on Unix-based systems like those used by Heroku.
 
-- Resolution
+- **Resolution**
 
 The bug was resolved by updating the clear_screen function to use the appropriate command based on the operating system. The updated function checks the OS type and uses cls for Windows and clear for Unix-based systems:
 
@@ -91,7 +94,20 @@ def clear_screen():
     else:
         print("\n" * 100)  # Fallback in case of other OS types
 
+- Unresolve bugs
+
+**Heroku Board Size Bug**
+
+![Welcome Screen](screenshots/bug.png)
+
+There is an issue where the `clear_screen` function does not clear the terminal correctly when the game is played with a large board size. This bug occurs inconsistently and primarily affects the game's display in the Heroku environment. 
+
+- **Resolution Attempts**
+
+Various attempts were made to resolve this issue, including adding extra newline characters to force the screen to clear. However, the problem persists specifically with the large board size. This issue is still under investigation.
+
 ## Technologies Used
+
 ### Tools and Resources
 
 - [Git](https://git-scm.com/): Employed for version control, enabling regular commits to Git and updates to GitHub from the terminal in Gitpod.
@@ -182,6 +198,11 @@ Choosing Visual Studio Code and WSL over Codeanywhere was a strategic decision t
 
 - Special thanks to [Udemy's 100 Days of Code: The Complete Python Pro Bootcamp for 2023](https://www.udemy.com/course/100-days-of-code/) for providing comprehensive lessons on Python and object-oriented programming, which significantly contributed to the development of this project.
 
+- [Udemy's Snake Game Part 1](https://www.udemy.com/course/100-days-of-code/learn/lecture/20356587#overview)
+- [Udemy's Snake Game Part 2](https://www.udemy.com/course/100-days-of-code/learn/lecture/20361125#overview)
+- [Udemy's Pong Game](https://www.udemy.com/course/100-days-of-code/learn/lecture/20414753#overview)
+
+
 This project was developed with the assistance of OpenAI's ChatGPT in the following areas:
 - **Code Validation**: ChatGPT helped validate the syntax and logic of the code.
 - **Spelling and Grammar Checks**: Assisted in checking and correcting spelling and grammar in the documentation and code comments.
@@ -191,3 +212,5 @@ This project was developed with the assistance of OpenAI's ChatGPT in the follow
 - **Real-Time Troubleshooting**: Supported real-time debugging and troubleshooting during the development process.
 
 Special thanks to [OpenAI's ChatGPT](https://openai.com/) for its invaluable support in refining the content and functionality of this project.
+
+
