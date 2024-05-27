@@ -65,7 +65,7 @@ def get_player_input():
             print("Invalid input, please enter a number between 1 and 10.")
 
     print("\nEach ship occupies 1 coordinate or cell space.\n")
-    
+
     return name, board_size, num_ships
 
 
@@ -157,12 +157,12 @@ def player_turn(board, board_size):
             if 0 <= shot_row < board_size and 0 <= shot_col < board_size:
                 result = board.take_shot(shot_row, shot_col)
                 if result is not None:
+                    clear_screen()
                     if result:
-                        clear_screen()
-                        print("Hit!")
+                        print(fontstyle.apply("Hit!", "bold/green"))
                     else:
-                        clear_screen()
-                        print("Miss!")
+                        print(fontstyle.apply("Miss!", "bold/red"))
+                    print("\n" * 2)  # Add extra space
                     break
                 else:
                     print("Invalid shot. Try again.")
@@ -220,9 +220,9 @@ def game_loop(player_board, computer_board, board_size):
         print("Computer's Board:")
         computer_board.display(show_ships=False)
         # For debugging, show ship position (1 index)
-        print(f"Computer's ship positions: "
-              f"{[(row + 1, col + 1) for row, col in computer_board.ships]} "
-              f"(1 index)")
+        #print(f"Computer's ship positions: "
+        #      f"{[(row + 1, col + 1) for row, col in computer_board.ships]} "
+        #      f"(1 index)")
         # Player's turn
         player_turn(computer_board, board_size)
         if computer_board.all_ships_sunk():
